@@ -24,7 +24,7 @@ from urlresolver.resolver import UrlResolver, ResolverError
 
 class VeryStreamResolver(UrlResolver):
     name = "verystream"
-    domains = ["verystream.com", "verystream.xyz"]
+    domains = ["verystream.com", "verystream.xyz", "woof.tube"]
     pattern = r'(?://|\.)(woof\.(?:tube|xyz))/(?:stream|e|source)/([a-zA-Z0-9]+)'
 
     def __init__(self):
@@ -32,7 +32,7 @@ class VeryStreamResolver(UrlResolver):
 
     def get_media_url(self, host, media_id):
         web_url = self.get_url(host, media_id)
-        headers = {'User-Agent': common.FF_USER_AGENT, 'Referer': 'https://verystream.com'}
+        headers = {'User-Agent': common.FF_USER_AGENT, 'Referer': 'https://woof.tube'}
         response = self.net.http_GET(web_url, headers=headers)
         html = response.content
 
