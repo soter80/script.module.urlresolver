@@ -32,7 +32,7 @@ class VeryStreamResolver(UrlResolver):
 
     def get_media_url(self, host, media_id):
         web_url = self.get_url(host, media_id)
-        headers = {'User-Agent': common.FF_USER_AGENT, 'Referer': 'https://verystream.com'}
+        headers = {'User-Agent': common.FF_USER_AGENT, 'Referer': 'https://woof.tube'}
         response = self.net.http_GET(web_url, headers=headers)
         html = response.content
 
