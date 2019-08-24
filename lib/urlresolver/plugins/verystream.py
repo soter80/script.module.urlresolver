@@ -25,7 +25,7 @@ from urlresolver.resolver import UrlResolver, ResolverError
 class VeryStreamResolver(UrlResolver):
     name = "verystream"
     domains = ["verystream.com", "verystream.xyz"]
-    pattern = r'(?://|\.)(verystream\.(?:com|xyz))/(?:stream|e|source)/([a-zA-Z0-9]+)'
+    pattern = r'(?://|\.)(woof\.(?:tube|xyz))/(?:stream|e|source)/([a-zA-Z0-9]+)'
 
     def __init__(self):
         self.net = common.Net()
@@ -40,7 +40,7 @@ class VeryStreamResolver(UrlResolver):
             regex = '(%s~[~.:a-zA-Z0-9]+)' % media_id
             videolink = re.search(regex, html)
             if videolink:
-                source = 'https://verystream.com/gettoken/%s?mime=true' % videolink.group(1)
+                source = 'https://woof.tube/gettoken/%s?mime=true' % videolink.group(1)
                 headers.update({'Referer': web_url})
                 return source + helpers.append_headers(headers)
 
