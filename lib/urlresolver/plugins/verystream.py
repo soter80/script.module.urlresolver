@@ -24,7 +24,7 @@ from urlresolver.resolver import UrlResolver, ResolverError
 
 class VeryStreamResolver(UrlResolver):
     name = "verystream"
-    domains = ["verystream.com", "verystream.xyz"]
+    domains = ["verystream.com", "verystream.xyz", "woof.tube"]
     pattern = r'(?://|\.)(woof\.(?:tube|xyz))/(?:stream|e|source)/([a-zA-Z0-9]+)'
 
     def __init__(self):
